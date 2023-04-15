@@ -14,7 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getCommonCharacterCount(s1, s2) {
 let counter = 0;
 let splittedString = s2.split('');
-for (let i = 0; i < s1.lenght; i++) {
+for (let i = 0; i < s1.length; i++) {
   if (splittedString.includes(s1[i])) {
     let indexOfSimilarCharter = splittedString.indexOf(s1[i])
     splittedString.splice(indexOfSimilarCharter, 1)

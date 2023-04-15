@@ -12,7 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getEmailDomain(email) {
 let arr = email.split('');
-let indexOfAt = arr.indexOf('@');
+let indexOfAt = arr.lastIndexOf('@');
 let adress = arr.slice(indexOfAt+1).join('')
 return adress
 }
