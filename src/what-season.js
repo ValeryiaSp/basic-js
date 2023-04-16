@@ -12,9 +12,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
+  const isDateValid = date instanceof Date && !date.hasOwnProperty('getMonth') && !date.hasOwnProperty('toString');
+
+  if (!isDateValid) {
+    throw new Error(INVALID_DATA_MSG);
+  }
   let month = date.getMonth();
-  if (date instanceof Date == false) throw new Error("Invalid date!")
-   console.log(month)
   if (month == 0 || month == 1 || month == 11) {
     return 'winter'
   }

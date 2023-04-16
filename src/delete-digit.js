@@ -15,8 +15,7 @@ function deleteDigit(n) {
   let str = String(n);
   let max = 0;
   for (let i = 0; i < str.length; i++) {
-    let sptittedStr = str.split('');
-    let currentNumber = +sptittedStr.splice(i, 1).join('')
+    let currentNumber = +(str.slice(0, i) + str.slice(i))
 
     if (currentNumber > max) {
       max = currentNumber
