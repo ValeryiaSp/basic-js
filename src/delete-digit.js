@@ -15,13 +15,13 @@ function deleteDigit(n) {
   let str = String(n);
   let max = 0;
   for (let i = 0; i < str.length; i++) {
-    let currentNumber = +(str.slice(0, i) + str.slice(i))
+    let currentNumber = +(str.slice(0, i) + str.slice(i+1))
 
     if (currentNumber > max) {
       max = currentNumber
     }
-    return max
   }
+  return max
   
 }
 
