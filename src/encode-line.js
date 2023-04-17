@@ -14,8 +14,11 @@ function encodeLine(str) {
   let result = '';
   let counter = 0;
   for (let i = 0; i <str.length; i++) {
-    
+    if(str[i] === str[i+]) {
+      counter += 1;
+    }
   }
+  return result
 }
 
 module.exports = {

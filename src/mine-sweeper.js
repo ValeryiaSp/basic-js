@@ -27,9 +27,9 @@ function minesweeper(matrix) {
   let currentNewRow = [];
   for (let i = 0; i < matrix.length; i++) {
     
+    currentNewRow.push([])
     for (let j=0; j < matrix[i].length; j++) {
       counter = 0;
-      currentNewRow[i].push(counter)
 
       if (matrix[i-1] && matrix[i-1][j-1]) {
         counter += 1;
@@ -56,6 +56,7 @@ function minesweeper(matrix) {
         counter += 1;
       }
       
+      currentNewRow[i].push(counter)
     }
   }
   return currentNewRow;
@@ -64,3 +65,5 @@ function minesweeper(matrix) {
 module.exports = {
   minesweeper
 };
+
+
