@@ -12,10 +12,17 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function encodeLine(str) {
   let result = '';
-  let counter = 0;
-  for (let i = 0; i <str.length; i++) {
-    if(str[i] === str[i+1]) {
+  let counter = 1;
+  let currentDigit = str[0]
+  for (let i = 1; i <= str.length; i++) {
+    if(str[i] === currentDigit) {
       counter += 1;
+    }
+
+    else {
+      result += (counter > 1 ? counter : '') + currentDigit;
+      counter = 1;
+      currentDigit = str[i];
     }
   }
   return result
