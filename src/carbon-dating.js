@@ -18,7 +18,10 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample(sampleActivity) {
-  const radioactiveDecay = LOG_TWO / HALF_LIFE_PERIOD;
+  if (sampleActivity === undefined) {
+    return false
+  }
+  const radioactiveDecay = Math.LN2 / HALF_LIFE_PERIOD;
     const elapsedTime = Math.log(MODERN_ACTIVITY / sampleActivity) / radioactiveDecay;
 
     return Math.ceil(elapsedTime);
